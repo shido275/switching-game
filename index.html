@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Switch Overlay</title>
+  <!-- Retro pixel + terminal fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background: animated dot-matrix grid -->
+  <div class="bg"></div>
+
+  <!-- CRT Monitor (fills the full 1920x1080 canvas) -->
+  <div class="monitor">
+    <span class="screw tl"></span>
+    <span class="screw tr"></span>
+    <span class="screw bl"></span>
+    <span class="screw br"></span>
+
+    <div class="screen">
+      <!-- CRT effects overlay -->
+      <div class="crt"><div class="sweep"></div></div>
+      <div class="crt-glow"></div>
+
+      <!-- Test-color bars strip at the bottom edge -->
+      <div class="colorbars">
+        <span class="cb1"></span><span class="cb2"></span>
+        <span class="cb3"></span><span class="cb2"></span>
+        <span class="cb1"></span><span class="cb3"></span>
+        <span class="cb1"></span><span class="cb3"></span>
+      </div>
+
+      <!-- Top bar: brand + scrolling marquee -->
+      <div class="topbar">
+        <div class="brand">TERM-<br>LINK</div>
+        <div class="marquee-wrap"><div class="marquee" id="marquee"></div></div>
+      </div>
+
+      <!-- Main content: cartridge + title -->
+      <div class="hero">
+        <div class="cart-area">
+          <div class="cartridge flicker">
+            <div class="label">SWITCH<br>GAME</div>
+          </div>
+        </div>
+        <div class="hero-text">
+          <div class="eyebrow" id="eyebrow">PLEASE STAND BY</div>
+          <div class="title">
+            <div class="line cyan" id="line1">SWITCHING</div>
+            <div class="line pink" id="line2">GAME</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminal boot ticker -->
+      <div class="boot" id="boot">> ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL</div>
+
+      <!-- Pixel loading bar -->
+      <div class="loadzone">
+        <div class="load-label">
+          <span>LOADING GAME DATA</span>
+          <span class="pct" id="pct">0%</span>
+        </div>
+        <div class="pixelbar" id="pixelbar"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
